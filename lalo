@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	
+	<head>
+		
+		<title>PetComp</title>
+		<meta name="PetComp" content="Programa de Educação Tutorial de Computação">
+		<meta name="KeyBoards" content="HTML5, CSS">
+		<link rel="stylesheet" type="text/css" href="css/teste.css">
+		<link rel="stylesheet" type="text/javascript" href="css/jquerymin.js">
+		<!--
+			<link rel="favoicon" href="" type="">
+		-->
+	</head>
+	
+	<body>
+		<div id="container">	
+			
+			<div id="topo">	
+					
+				<ul id="menu_topo" class="listas">
+					<li> <a href="index.html" title = "petcomp" target = "self" style="display:inline">
+					            <img src="imgs/575037_424273057645588_629341645_n.jpg" id="petcomp" width="100"; height="50"; style="padding:2px;margin:3px;" align="center">
+				         </a>
+				    </li>
+					<li><a href="index.html" target="self" class="link_topo"><!--linkagem target = self-->Home</a></li>
+					<li><a href="http:\\www.google.com.br" target="_blank" class="link_topo"> <!--linkagem target = blank-->Contato</a></li>
+					<li><a href="http:\\www.google.com.br" target="_blank" class="link_topo"><!--linkagem target = blank-->About</a></li>
+				</ul>
+				
+			</div>
+			
+			<div class="faixa">
+				<p id="nome1">Bem vindo!!</p>
+			</div>
+			
+			<div id="slide_topo">
+				
+				<p>Area de Slides</p>
+				<p>Por Enquanto entreterimento</p>
+				
+				<canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+				Browser nao suporta</canvas>
+				<canvas id="myCanvas1" width="200" height="100" style="border:1px solid #d3d3d3;">
+				Browser nao suporta</canvas>
+				<canvas id="myCanvas2" width="200" height="100" style="border:1px solid #d3d3d3;">
+				Browser nao suporta</canvas>
+				<!--uso de jquery para passagem de slide-->
+				
+				
+				<script>
+					var c=document.getElementById("myCanvas");
+					var ctx=c.getContext("2d");
+					ctx.fillStyle="#FF0000";
+					ctx.fillRect(0,0,150,75);
+				</script>
+				<script>
+					var c=document.getElementById("myCanvas");
+					var ctx=c.getContext("2d");
+					ctx.moveTo(0,0);
+					ctx.lineTo(200,100);
+					ctx.stroke();
+				</script>
+				
+				<script>
+					var c=document.getElementById("myCanvas");
+					var ctx=c.getContext("2d");
+					ctx.beginPath();
+					ctx.arc(95,50,40,0,2*Math.PI);
+					ctx.stroke();
+				</script>
+				<script>
+					var c=document.getElementById("myCanvas2");
+					var ctx=c.getContext("2d");
+					ctx.font="30px Arial";
+					ctx.fillText("Hello World",10,50);
+				</script>
+				<script>
+				
+					var c=document.getElementById("myCanvas1");
+					var ctx=c.getContext("2d");
+					
+					// Create gradient
+					var grd=ctx.createLinearGradient(0,0,200,0);
+					grd.addColorStop(0,"red");
+					grd.addColorStop(1,"white");
+					
+					// Fill with gradient
+					ctx.fillStyle=grd;
+					ctx.fillRect(10,10,150,80);
+				</script>
+				
+				<svg height="190">
+   					<polygon points="100,10 40,180 190,60 10,60 160,180" style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;">
+				</svg>
+				
+				<style type="text/css">
+				#div1, #div2
+				{float:left; width:100px; height:35px; margin:10px;padding:10px;border:1px solid #aaaaaa;}
+				</style>
+				
+				<script>
+					function allowDrop(ev)
+					{
+					ev.preventDefault();
+					}
+					
+					function drag(ev)
+					{
+					ev.dataTransfer.setData("Text",ev.target.id);
+					}
+					
+					function drop(ev)
+					{
+					ev.preventDefault();
+					var data=ev.dataTransfer.getData("Text");
+					ev.target.appendChild(document.getElementById(data));
+					}
+				</script>
+				
+  					<img src="imgs/luffy.jpg" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+				<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+				<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+				
+				<video width="480" height="320" autoplay="autolplay" controls="controls">
+					<source src="videos/Wildlife.webm" type="video/webm"></source>
+				</video>
+				
+				<!--<audio controls>
+  					<source src="horse.ogg" type="audio/ogg">
+ 					 <source src="horse.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio>-->
+				
+				
+			</div>
+			
+			<div id="menu">
+				<!-- Menus do site -->
+				<ul id="menu_medio" class="listas">
+					<li><a href="http://www.google.com.br" class="link_medio"><!--Linkagens usando bootstrap com elementos surgindo-->Projetos Pet</a></li>
+					<li><a href="http://www.google.com.br" class="link_medio"><!--Linkagens usando bootstrap com elementos surgindo-->Eventos</a></li>
+					<li><a href="http://www.google.com.br" class="link_medio"><!--Linkagens usando bootstrap com elementos surgindo-->Informações</a></li>	
+				</ul>
+				
+			</div>
+			
+			<div id="footer">
+				<!--Area do rodapé-->
+				<p>Copyright 2013<hr>
+				All rights are reserved<br/>
+				PETComp
+				<!--outras informações-->
+				</p>
+			</div>
+		
+		</div>
+	</body>
+	
+</html>
